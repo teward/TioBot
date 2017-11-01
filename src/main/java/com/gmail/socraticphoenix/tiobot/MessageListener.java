@@ -27,7 +27,8 @@ public class MessageListener implements Consumer<MessagePostedEvent> {
         String handle = "@" + messagePostedEvent.getUser().get().getName();
 
         String text = messagePostedEvent.getMessage().getPlainContent();
-        if (text.startsWith("#TIO ")) {
+        textLC = textLC.toLowerCase()
+        if (textLC.startsWith("#tio ")) {
             text = text.substring(5);
             while (text.startsWith(" ")) {
                 text = text.replace(" ", "");
